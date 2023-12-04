@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        numList();
+       studentList();
     }
 
     public static void arrayList() {
@@ -34,5 +32,23 @@ public class Main {
         Collections.sort(numList);
 
         System.out.println(numList);
+    }
+
+    public static void studentList() {
+
+        Student student1 = new Student(23, "Joseph");
+        Student student2 = new Student(3, "Rane");
+        Student student3 = new Student(33, "Zack");
+
+
+        List<Student> students = Arrays.asList(student1, student2, student3);
+
+        Comparator<Student> comparator = new StudentIdComparator();
+
+        Collections.sort(students, comparator);
+
+        for (var student : students) {
+            System.out.println(student);
+        }
     }
 }
