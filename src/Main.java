@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-       studentList();
+       studentLambda();
     }
 
     public static void arrayList() {
@@ -46,6 +46,24 @@ public class Main {
         Comparator<Student> comparator = new StudentIdComparator();
 
         Collections.sort(students, comparator);
+
+        for (var student : students) {
+            System.out.println(student);
+        }
+    }
+
+    public static void studentLambda() {
+        Student student1 = new Student(23, "Joseph");
+        Student student2 = new Student(3, "Rane");
+        Student student3 = new Student(33, "Zack");
+
+
+        List<Student> students = Arrays.asList(student1, student2, student3);
+
+        Collections.sort(students, (o1, o2) -> o1.getId() - o2.getId());
+
+
+        //Collections.sort(students, Comparator.comparingInt(Student::getId));
 
         for (var student : students) {
             System.out.println(student);
