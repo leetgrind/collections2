@@ -16,6 +16,13 @@ public class MainMap {
         List<Integer> newList = newStream.collect(Collectors.toList());
 
         System.out.println(newList);
+
+
+        List<Integer> listAdd = list.stream()
+                .map(num -> num*5)
+                .collect(Collectors.toList());
+
+        System.out.println(listAdd);
     }
 
 }
