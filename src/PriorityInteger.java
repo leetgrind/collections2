@@ -1,4 +1,4 @@
-public class PriorityInteger {
+public class PriorityInteger implements Comparable<PriorityInteger> {
 
     private int value;
     private int priority;
@@ -11,5 +11,10 @@ public class PriorityInteger {
     @Override
     public String toString() {
         return "Value: " + this.value + ". Priority: " + this.priority;
+    }
+
+    @Override
+    public int compareTo(PriorityInteger o) {
+        return this.priority - o.priority;
     }
 }
